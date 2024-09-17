@@ -20,6 +20,8 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const User = require("./models/user.js");
 const localStrategy = require("passport-local");
+const wrapAsync=require('./utils/wrapAsync.js');
+const Listing=require("./models/listing.js")
 
 const atlasUrl = process.env.ATLASDB_URL;
 
