@@ -1,0 +1,44 @@
+<% layout("layouts/boilerplate") %>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 signup-box mb-4">
+        <h2 class="text-center signup-heading"><i class="fas fa-sign-in"></i> Login</h2>
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+          <hr>
+          <div class="row mb-3">
+            <div class="col-md-8 signup-fields">
+              <label for="username"><i class="fa fa-user" aria-hidden="true"></i> Username</label>
+              <input
+                type="text"
+                class="form-control"
+                name="username"
+                id="username"
+                required
+              />
+              <div class="valid-feedback">Looks Good!</div>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-8 signup-fields">
+              <label for="password"><i class="fa-solid fa-key"></i> Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="password"
+                required
+              />
+              <div class="valid-feedback">Looks Good!</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 signup-fields text-center">
+              <button class="btn btn-danger signup-btn" style="margin: auto;">Login :)</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

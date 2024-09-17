@@ -1,0 +1,236 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+
+/************************************************ Navbar *****************************************/
+
+.navbar {
+  background-color: white;
+}
+.navbar-brand {
+  color: #c40c0c !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.fa-compass {
+  font-size: 1.7rem;
+}
+.nav-link {
+  color: #222 !important;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.nav-link:hover {
+  border-bottom: 2px solid #c40c0c;
+}
+
+/* Search Button */
+.btn-search {
+  background-color: #c40c0c;
+  color: white;
+  padding: 0 1.8rem;
+  border-radius: 1.5rem;
+  border: none;
+  white-space: nowrap; /* Prevent icon and text from wrapping */
+  display: inline-flex; /* Flex layout to align icon and text */
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the content vertically */
+  text-align: center; /* Ensure text is centered */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  width: 100%; /* Make button full-width on small screens */
+}
+
+/* Icon inside the button */
+.btn-search i {
+  display: inline;
+  margin-right: 0.5rem; /* Add space between icon and text */
+}
+
+/* Hover effect for button */
+.btn-search:hover {
+  background-color: #a30a0a; /* Darker red on hover */
+  color: white;
+}
+
+/* Search Input */
+.search-inp {
+  border-radius: 1.5rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid #ccc; /* Subtle border */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth input effects */
+  width: 100%; /* Full width on smaller screens */
+}
+
+/* Hover effect for input */
+.search-inp:hover {
+  border-color: #c40c0c; /* Change border color on hover */
+}
+
+/* Focus effect for input */
+.search-inp:focus {
+  outline: none; /* Remove default outline */
+  border-color: #c40c0c; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(196, 12, 12, 0.5); /* Subtle glow effect on focus */
+}
+
+/* Responsive styling for larger screens */
+@media (min-width: 768px) {
+  .search-inp {
+    width: auto; /* Reset width for larger screens */
+  }
+  .btn-search {
+    width: auto; /* Reset width for larger screens */
+  }
+}
+
+/************************************** footer ******************************************/
+
+footer {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #ebebeb;
+}
+.footer-info {
+  text-align: center;
+  height: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.f-info-social,
+.f-info-company {
+  width: 100%;
+}
+.f-info-social i {
+  font-size: 1.75rem;
+  margin-right: 1rem;
+  color: #222;
+}
+.f-info-privacy a {
+  text-decoration: none;
+  color: #222;
+}
+.f-info-privacy a:hover {
+  text-decoration: underline;
+}
+.about-us {
+  margin-left: 1rem;
+}
+.about-us p{
+  font-size: 0.9rem;
+}
+/******************************************* Index Cards *********************************************/
+.image-link {
+  text-decoration: none;
+}
+.listing-card {
+  border: none;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.my-index-listing-card {
+  border-radius: 1.5rem;
+  width: 100% !important;
+  object-fit: cover !important;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+.card-body {
+  padding: 0;
+}
+.card-text {
+  font-weight: 400;
+}
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/********************************************* Create listing ***************************************/
+
+.form-label {
+  font-weight: 600;
+}
+.add-btn {
+  background-color: #c40c0c !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+}
+.list-image {
+  height: auto;
+  width: 95%;
+}
+.listing-heading {
+  color: #c40c0c;
+  font-weight: 600;
+}
+
+.save-btn {
+  background-color: #c40c0c;
+  border: none;
+}
+
+/******************************************** Show page *********************************************/
+
+.show-img {
+  height: 50vh;
+  border-radius: 1.75rem;
+}
+.show-text {
+  line-height: 1.75rem;
+}
+.show-body {
+  margin: 0 auto;
+}
+.edit-btn {
+  background-color: #c40c0c;
+  border: none;
+}
+
+.show-btns {
+  display: flex;
+  align-items: center;
+}
+
+.review-card {
+  padding: 0.5rem;
+}
+
+/**********************************Sign Up**********************/
+.signup-box {
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px 2px rgba(220, 209, 209, 0.5);
+  border-radius: 20px;
+  padding: 15px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signup-fields {
+  margin: auto;
+}
+.signup-btn {
+  background-color: #c40c0c;
+  padding: 0.4rem 4rem;
+}
+
+/********Map*********/
+#map {
+  height: 350px;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,163 @@
+<% layout("layouts/boilerplate") %>
+<style>
+/* Filters container */
+#filters {
+  display: flex;
+  justify-content: flex-start; /* Align filters from the start */
+  align-items: center;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  width: 100% !important;
+  height: 100px !important;
+  padding: 10px; /* Adds padding to prevent edges from being cut off */
+  white-space: nowrap; /* Prevents wrapping */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+#filters {
+  -ms-overflow-style: none; /* For IE and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* Filter items */
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  flex-shrink: 0; /* Prevents items from shrinking */
+}
+
+/* Filter hover effect */
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.05) !important;
+  transition: 100ms ease all !important;
+}
+
+/* Filter text */
+.filter p {
+  font-size: 0.95rem;
+}
+
+/* Tax toggle styling */
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3.58rem;
+  padding: 0.8rem;
+  display: flex;
+  min-width: 250px;
+  width: fit-content;
+  /* margin-top: 0.3rem; */
+  align-items: center;
+}
+
+/* Selected filter styling */
+.selected-filter {
+  border-bottom: 3px solid #683193; /* Adjust the styling as needed */
+}
+
+
+</style>
+<body>
+  <div class="container-fluid">
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-brands fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Amazing Pools</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+        <p>Beachfront</p>
+      </div>
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"
+            >Display total after taxes</label
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1 mt-3"
+    >
+      <% for(let listing of allListings){ %>
+
+      <a href="/listings/<%= listing._id %>" class="image-link">
+        <div class="card col-lg-3 col-md-4 col-sm-6 col-xs-12 listing-card">
+          <img
+            src="<%= listing.image.url %>"
+            class="card-img-top my-index-listing-card"
+            alt="listing-image"
+            style="height: 16rem"
+          />
+
+          <div class="card-img-overlay"></div>
+          <div class="card-body">
+            <p class="card-text mt-3">
+              <b><%= listing.title %> </b><br />
+              &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+              <i class="tax-switch"><b> &nbsp; &nbsp; +18% GST</b></i>
+            </p>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</body>
+<script>
+  let taxToggle = document.getElementById("flexSwitchCheckDefault");
+  taxToggle.addEventListener("change", () => {
+    let taxInfo = document.getElementsByClassName("tax-switch");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
+        info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
+    }
+  });
+</script>
