@@ -91,6 +91,13 @@ app.get("/demouser", async (req, res) => {
 });
 
 /*   '/listings' is the common path in all routes of listings  */
+app.get(
+  "/",
+  wrapAsync(async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("listings/index.ejs", { allListings });
+  })
+);
 app.use("/listings", listingsRouter);
 
 /*   '/listings/:id/reviews' is the common path in all routes of reviews */
